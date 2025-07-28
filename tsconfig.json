@@ -1,51 +1,87 @@
 {
+  // TypeScript 编译器选项
   "compilerOptions": {
+    // 目标 ECMAScript 版本 - 编译后的 JavaScript 版本
     "target": "ES2020",
+    
+    // 包含的库文件 - 提供 DOM 和 ES6 的类型定义
     "lib": ["dom", "dom.iterable", "es6"],
+    
+    // 允许编译 JavaScript 文件
     "allowJs": true,
+    
+    // 跳过库文件的类型检查，提高编译速度
     "skipLibCheck": true,
+    
+    // 启用严格模式 - 更严格的类型检查
     "strict": true,
+    
+    // 不生成输出文件，只进行类型检查
     "noEmit": true,
+    
+    // 启用 ES 模块互操作性
     "esModuleInterop": true,
+    
+    // 模块系统 - 使用 ES 模块
     "module": "esnext",
+    
+    // 模块解析策略 - 使用 bundler 模式（适合 Next.js）
     "moduleResolution": "bundler",
+    
+    // 允许导入 JSON 文件
     "resolveJsonModule": true,
+    
+    // 确保每个文件都是独立的模块
     "isolatedModules": true,
+    
+    // JSX 处理方式 - 保留 JSX 语法
     "jsx": "preserve",
+    
+    // 启用增量编译
     "incremental": true,
+    
+    // Next.js 插件配置
     "plugins": [
       {
         "name": "next"
       }
     ],
+    
+    // 基础路径 - 用于路径别名解析
     "baseUrl": ".",
+    
+    // 路径别名配置 - 简化导入路径
     "paths": {
-      "@/*": ["./src/*"],
-      "@/components/*": ["./src/components/*"],
-      "@/lib/*": ["./src/lib/*"],
-      "@/utils/*": ["./src/utils/*"],
-      "@/types/*": ["./src/types/*"],
-      "@/hooks/*": ["./src/hooks/*"],
-      "@/contexts/*": ["./src/contexts/*"],
-      "@/services/*": ["./src/services/*"],
-      "@/store/*": ["./src/store/*"],
-      "@/constants/*": ["./src/constants/*"],
-      "@/styles/*": ["./src/styles/*"]
+      "@/*": ["./src/*"], // @ 指向 src 目录
+      "@/components/*": ["./src/components/*"], // 组件目录
+      "@/lib/*": ["./src/lib/*"], // 工具库目录
+      "@/utils/*": ["./src/utils/*"], // 工具函数目录
+      "@/types/*": ["./src/types/*"], // 类型定义目录
+      "@/hooks/*": ["./src/hooks/*"], // 自定义钩子目录
+      "@/contexts/*": ["./src/contexts/*"], // 上下文目录
+      "@/services/*": ["./src/services/*"], // 服务目录
+      "@/store/*": ["./src/store/*"], // 状态管理目录
+      "@/constants/*": ["./src/constants/*"], // 常量目录
+      "@/styles/*": ["./src/styles/*"] // 样式目录
     }
   },
+  
+  // 包含的文件 - 指定哪些文件需要类型检查
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
+    "next-env.d.ts", // Next.js 类型定义
+    "**/*.ts", // 所有 TypeScript 文件
+    "**/*.tsx", // 所有 TypeScript React 文件
+    ".next/types/**/*.ts" // Next.js 生成的类型文件
   ],
+  
+  // 排除的文件 - 指定哪些文件不需要类型检查
   "exclude": [
-    "node_modules",
-    ".next",
-    "out",
-    "dist",
-    "build",
-    "coverage",
-    "storybook-static"
+    "node_modules", // 依赖包
+    ".next", // Next.js 构建输出
+    "out", // 静态导出输出
+    "dist", // 分发目录
+    "build", // 构建输出
+    "coverage", // 测试覆盖率报告
+    "storybook-static" // Storybook 静态文件
   ]
 } 
