@@ -8,9 +8,9 @@ interface AnalyticsProps {
   enableAnalytics?: boolean
 }
 
-export function Analytics({ 
-  googleAnalyticsId, 
-  enableAnalytics = process.env.NODE_ENV === 'production' 
+export function Analytics({
+  googleAnalyticsId,
+  enableAnalytics = process.env.NODE_ENV === 'production',
 }: AnalyticsProps) {
   const pathname = usePathname()
   const searchParams = useSearchParams()

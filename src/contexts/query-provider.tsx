@@ -23,10 +23,10 @@ export function QueryProvider({ children }: QueryProviderProps) {
           queries: {
             // 数据新鲜时间 - 1分钟内认为数据是新鲜的，不会重新获取
             staleTime: 60 * 1000, // 1 minute
-            
+
             // 垃圾回收时间 - 10分钟内数据会被缓存，超过后会被清理
             gcTime: 10 * 60 * 1000, // 10 minutes
-            
+
             // 重试策略 - 自定义重试逻辑
             retry: (failureCount: number, error: any) => {
               // 对于 4xx 错误（客户端错误），不进行重试
@@ -52,7 +52,7 @@ export function QueryProvider({ children }: QueryProviderProps) {
     <QueryClientProvider client={queryClient}>
       {/* 子组件 */}
       {children}
-      
+
       {/* React Query 开发工具 - 只在开发环境中显示 */}
       {/* 这个工具可以帮助调试数据获取状态、缓存等 */}
       {process.env.NODE_ENV === 'development' && (

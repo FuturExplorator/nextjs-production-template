@@ -16,11 +16,14 @@ const buttonVariants = cva(
         // 默认变体 - 主要按钮样式
         default: 'bg-primary text-primary-foreground hover:bg-primary/90',
         // 破坏性变体 - 用于危险操作（如删除）
-        destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+        destructive:
+          'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         // 轮廓变体 - 带边框的按钮
-        outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+        outline:
+          'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
         // 次要变体 - 次要操作按钮
-        secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+        secondary:
+          'bg-secondary text-secondary-foreground hover:bg-secondary/80',
         // 幽灵变体 - 透明背景的按钮
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         // 链接变体 - 看起来像链接的按钮
@@ -60,7 +63,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     // 如果 asChild 为 true，使用 Slot 组件
     // Slot 允许将按钮的样式和属性传递给子组件
     const Comp = asChild ? Slot : 'button'
-    
+
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}

@@ -36,7 +36,7 @@
 npx create-next-app@latest my-app --template nextjs-production-template
 
 # 或者克隆仓库
-git clone https://github.com/your-username/nextjs-production-template.git my-app
+git clone https://github.com/FuturExplorator/nextjs-production-template.git my-app
 cd my-app
 ```
 
@@ -249,9 +249,9 @@ NEXT_PUBLIC_GA_ID=your-ga-id
 ## 📞 支持
 
 - [文档](https://your-docs-url.com)
-- [Issues](https://github.com/your-username/nextjs-production-template/issues)
-- [Discussions](https://github.com/your-username/nextjs-production-template/discussions)
+- [Issues](https://github.com/FuturExplorator/nextjs-production-template/issues)
+- [Discussions](https://github.com/FuturExplorator/nextjs-production-template/discussions)
 
 ---
 
-由 [Your Name](https://github.com/your-username) 用 ❤️ 制作 
+由 [Your Name](https://github.com/FuturExplorator) 用 ❤️ 制作 

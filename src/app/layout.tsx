@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
+import '@/styles/globals.css'
 
 // 导入上下文提供者组件
 import { ThemeProvider } from '@/contexts/theme-provider'
@@ -12,7 +12,7 @@ import { Analytics } from '@/components/analytics'
 import { ErrorBoundary } from '@/components/error-boundary'
 
 // 配置 Inter 字体 - Google Fonts 的现代无衬线字体
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'], // 只加载拉丁字符集，减少字体文件大小
   variable: '--font-inter', // CSS 变量名，用于在 CSS 中引用
 })
@@ -23,7 +23,8 @@ export const metadata: Metadata = {
     default: 'Next.js 生产级模板', // 默认标题
     template: '%s | Next.js 生产级模板', // 标题模板，%s 会被具体页面标题替换
   },
-  description: '一个现代化的 Next.js 14 生产级项目模板，包含完整的技术栈和最佳实践。', // 网站描述
+  description:
+    '一个现代化的 Next.js 14 生产级项目模板，包含完整的技术栈和最佳实践。', // 网站描述
   keywords: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', '生产级模板'], // 关键词
   authors: [{ name: '开发团队' }], // 作者信息
   creator: '开发团队', // 创建者
@@ -89,16 +90,16 @@ export default function RootLayout({
 }) {
   return (
     // html 标签配置
-    <html 
-      lang="zh-CN" // 设置语言为中文简体
+    <html
+      lang='zh-CN' // 设置语言为中文简体
       suppressHydrationWarning // 抑制水合警告（用于主题切换）
       className={inter.variable} // 应用字体 CSS 变量
     >
       {/* head 标签内容由 Next.js 自动管理 */}
       <head />
-      
+
       {/* body 标签 */}
-      <body 
+      <body
         className={`
           ${inter.className} // 应用 Inter 字体
           min-h-screen // 最小高度为屏幕高度
@@ -111,8 +112,8 @@ export default function RootLayout({
         <ErrorBoundary>
           {/* 主题提供者 - 管理暗色/亮色主题 */}
           <ThemeProvider
-            attribute="class" // 使用 class 属性切换主题
-            defaultTheme="system" // 默认使用系统主题
+            attribute='class' // 使用 class 属性切换主题
+            defaultTheme='system' // 默认使用系统主题
             enableSystem // 启用系统主题检测
             disableTransitionOnChange // 主题切换时禁用过渡动画
           >
@@ -120,10 +121,10 @@ export default function RootLayout({
             <QueryProvider>
               {/* 主要内容区域 */}
               {children}
-              
+
               {/* 通知组件 - 显示 toast 消息 */}
               <Toaster />
-              
+
               {/* 分析组件 - 网站访问统计 */}
               <Analytics />
             </QueryProvider>
@@ -132,4 +133,4 @@ export default function RootLayout({
       </body>
     </html>
   )
-} 
+}

@@ -2,7 +2,8 @@
 export const APP_CONFIG = {
   name: 'Next.js Production Template',
   version: '1.0.0',
-  description: 'A production-ready Next.js template with TypeScript, Tailwind CSS, and modern tooling',
+  description:
+    'A production-ready Next.js template with TypeScript, Tailwind CSS, and modern tooling',
   url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   apiUrl: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api',
 } as const

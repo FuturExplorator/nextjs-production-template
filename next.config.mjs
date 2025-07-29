@@ -1,7 +1,5 @@
-import type { NextConfig } from 'next'
-
-// Next.js 配置对象 - 定义框架的行为和优化选项
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   // 实验性功能配置
   experimental: {
     // 优化包导入 - 减少打包体积，提高加载性能

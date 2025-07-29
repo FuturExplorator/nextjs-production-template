@@ -98,7 +98,7 @@ export function debounce<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout | null = null
-  
+
   return (...args: Parameters<T>) => {
     if (timeout) {
       clearTimeout(timeout)
@@ -114,7 +114,7 @@ export function throttle<T extends (...args: any[]) => any>(
   limit: number
 ): (...args: Parameters<T>) => void {
   let inThrottle: boolean = false
-  
+
   return (...args: Parameters<T>) => {
     if (!inThrottle) {
       func(...args)
@@ -130,15 +130,15 @@ export function deepClone<T>(obj: T): T {
   if (obj === null || typeof obj !== 'object') {
     return obj
   }
-  
+
   if (obj instanceof Date) {
     return new Date(obj.getTime()) as unknown as T
   }
-  
+
   if (obj instanceof Array) {
     return obj.map(item => deepClone(item)) as unknown as T
   }
-  
+
   if (typeof obj === 'object') {
     const clonedObj = {} as T
     for (const key in obj) {
@@ -148,7 +148,7 @@ export function deepClone<T>(obj: T): T {
     }
     return clonedObj
   }
-  
+
   return obj
 }
 
@@ -158,7 +158,7 @@ export function isMobileDevice(): boolean {
   if (typeof window === 'undefined') {
     return false
   }
-  
+
   const userAgent = navigator.userAgent.toLowerCase()
   return /mobile|android|iphone|ipad|phone/i.test(userAgent)
 }
@@ -169,6 +169,6 @@ export function isTouchDevice(): boolean {
   if (typeof window === 'undefined') {
     return false
   }
-  
+
   return 'ontouchstart' in window || navigator.maxTouchPoints > 0
 }

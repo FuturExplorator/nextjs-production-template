@@ -52,7 +52,15 @@ export interface SearchParams extends PaginationParams {
 export interface FormField {
   name: string
   label: string
-  type: 'text' | 'email' | 'password' | 'number' | 'textarea' | 'select' | 'checkbox' | 'radio'
+  type:
+    | 'text'
+    | 'email'
+    | 'password'
+    | 'number'
+    | 'textarea'
+    | 'select'
+    | 'checkbox'
+    | 'radio'
   required?: boolean
   placeholder?: string
   options?: Array<{ value: string; label: string }>
@@ -187,7 +195,13 @@ export interface BaseComponentProps {
 
 // 按钮类型
 export interface ButtonProps extends BaseComponentProps {
-  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link'
+  variant?:
+    | 'default'
+    | 'destructive'
+    | 'outline'
+    | 'secondary'
+    | 'ghost'
+    | 'link'
   size?: 'default' | 'sm' | 'lg' | 'icon'
   disabled?: boolean
   loading?: boolean
@@ -742,10 +756,12 @@ export interface ImageProps extends BaseComponentProps {
   width?: number | string
   height?: number | string
   fallback?: string
-  preview?: boolean | {
-    visible?: boolean
-    onVisibleChange?: (visible: boolean) => void
-  }
+  preview?:
+    | boolean
+    | {
+        visible?: boolean
+        onVisibleChange?: (visible: boolean) => void
+      }
   placeholder?: React.ReactNode
 }
 
